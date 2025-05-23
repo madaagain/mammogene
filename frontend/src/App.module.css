@@ -1,0 +1,304 @@
+/* Container principal */
+.container {
+    height: 100vh;
+    background-color: #0f0f23;
+    color: #ffffff;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: #1a1a35;
+    border-bottom: 1px solid #2a2a4a;
+    padding: 1rem 0;
+    flex-shrink: 0;
+}
+
+.headerContent {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9rem;
+    color: #a0a0b0;
+}
+
+/* Chat Container */
+.chatContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.messagesContainer {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Message d'accueil */
+.welcomeMessage {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #a0a0b0;
+}
+
+.welcomeIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.welcomeTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.welcomeText {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Messages */
+.message {
+    background-color: #1a1a35;
+    border-radius: 12px;
+    padding: 1rem;
+    border-left: 4px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.message:hover {
+    background-color: #1f1f3a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.userMessage {
+    border-left-color: #667eea;
+    margin-left: 2rem;
+}
+
+.aiMessage {
+    border-left-color: #764ba2;
+    margin-right: 2rem;
+}
+
+.errorMessage {
+    border-left-color: #ff6b6b;
+    background-color: #2d1414;
+    margin-right: 2rem;
+}
+
+.messageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.messageRole {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.messageTime {
+    font-size: 0.8rem;
+    color: #a0a0b0;
+}
+
+.messageContent {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Loading */
+.loadingMessage {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #a0a0b0;
+    font-style: italic;
+}
+
+.loadingDots {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.loadingDots span {
+    width: 6px;
+    height: 6px;
+    background-color: #667eea;
+    border-radius: 50%;
+    animation: loading 1.4s infinite ease-in-out both;
+}
+
+.loadingDots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loadingDots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes loading {
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* Input Area */
+.inputContainer {
+    padding: 1rem;
+    background-color: #1a1a35;
+    border-top: 1px solid #2a2a4a;
+    flex-shrink: 0;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    max-width: 100%;
+}
+
+.input {
+    flex: 1;
+    background-color: #0f0f23;
+    border: 2px solid #2a2a4a;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: none;
+    min-height: 44px;
+    max-height: 120px;
+    transition: all 0.2s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input::placeholder {
+    color: #666;
+}
+
+.input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.sendButton {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 50px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sendButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.sendButton:active {
+    transform: translateY(0);
+}
+
+.sendButtonDisabled {
+    background: #2a2a4a;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        height: 100vh;
+        height: 100dvh; /* Pour les mobiles */
+    }
+
+    .messagesContainer {
+        padding: 0.5rem;
+    }
+
+    .userMessage {
+        margin-left: 0.5rem;
+    }
+
+    .aiMessage,
+    .errorMessage {
+        margin-right: 0.5rem;
+    }
+
+    .welcomeMessage {
+        padding: 2rem 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Scrollbar custom */
+.messagesContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messagesContainer::-webkit-scrollbar-track {
+    background: #1a1a35;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb {
+    background: #2a2a4a;
+    border-radius: 3px;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb:hover {
+    background: #3a3a5a;
+}
